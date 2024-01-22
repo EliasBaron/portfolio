@@ -1,38 +1,55 @@
 ---
 import Header from "../components/Header.astro";
+import '@fontsource-variable/onest';
+
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { description, title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+  
   <body>
+    <div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+    </div>
     <Header />
     <slot />
   </body>
 </html>
+
 <style is:global>
   :root {
+    color-scheme: light dark;
   }
+
   html {
-    font-family: system-ui, sans-serif;
+    font-family: 'Onest Variable', system-ui, sans-serif;
   }
 
   body {
     display: flex;
-    justify-content: center;
-    background: #02010100;
+    background: #050505;
+    min-height: 100vh;
+    flex-direction: column;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 </style>

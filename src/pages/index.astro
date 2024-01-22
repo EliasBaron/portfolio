@@ -1,9 +1,42 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import MailIcon from "../icons/Mail.astro";
+import SocialPill from "../components/SocialPill.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Portfolio</h1>
-	</main>
+<Layout
+  title="Portfolio de Elias - Desarrollador y Programador Web"
+  description="Contacta con Elias Baron, desarrollador web y programador full stack."
+>
+  <main>
+    <section class="w-full lg:w-[740px] mx-auto py-44">
+      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+        Hola, soy Elias!
+        <!-- <div class="flex justify-center items-center"><Badge>Disponible</Badge></div> -->
+      </h1>
+      <h2 class="text-2xl opacity-80 text-wrap">
+        Estudiante universitario de Licenciatura en Informática en la UNQ.
+        Interesado por el desarrollo. De <span class="text-sky-400"
+          >Buenos Aires, Argentina</span
+        >.
+      </h2>
+      <nav class="flex gap-x-2 mt-8">
+        <SocialPill href="https://www.linkedin.com/in/elias-baron-390987270/">
+          <LinkedInIcon />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/EliasBaron">
+          <GitHubIcon />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:eliasnbaron@gmail.com">
+          <MailIcon />
+          eliasnbaron@gmail.com
+        </SocialPill>
+      </nav>
+    </section>
+  </main>
 </Layout>
