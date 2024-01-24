@@ -5,6 +5,8 @@ import LinkedInIcon from "../icons/LinkedIn.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 import MailIcon from "../icons/Mail.astro";
 import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 ---
 
 <Layout
@@ -12,7 +14,7 @@ import SocialPill from "../components/SocialPill.astro";
   description="Contacta con Elias Baron, desarrollador web y programador full stack."
 >
   <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
+    <SectionContainer>
       <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
         Hola, soy Elias!
         <!-- <div class="flex justify-center items-center"><Badge>Disponible</Badge></div> -->
@@ -37,6 +39,11 @@ import SocialPill from "../components/SocialPill.astro";
           eliasnbaron@gmail.com
         </SocialPill>
       </nav>
-    </section>
+    </SectionContainer>
+
+    <SectionContainer>
+      <Experience />
+    </SectionContainer>
+
   </main>
 </Layout>
