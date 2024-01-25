@@ -1,0 +1,40 @@
+---
+const PROJECTS = [
+  {
+    title: "Steam Project",
+    description:
+      "A educational project which I made, simulating a Steam page. It has an API, web and mobile",
+    link: "https://github.com/EliasBaron/Steam-project",
+    github: "https://github.com/EliasBaron/Steam-project",
+    image: "/projects/st.webp",
+    tags: ["Javalin", "CSS", "JavaScript", "React", "React Native"],
+  },
+  {
+    title: "Battleship",
+    description: "A simple battleship game where you play against the computer",
+    link: "https://elias-battleship.netlify.app/",
+    github: "https://github.com/EliasBaron/unq-ui-elias-baron-trabajo-final",
+    image: "/projects/bs.webp",
+    tags: ["CSS", "React"],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul>
+        {tags.map((tag) => (
+          <li>{tag}</li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={"Captura de pantalla del proyecto ${image}"}
+      />
+    </article>
+  ))
+}
