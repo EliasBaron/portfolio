@@ -7,6 +7,7 @@ import MailIcon from "../icons/Mail.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../icons/Briefcase.astro";
 ---
 
 <Layout
@@ -14,7 +15,7 @@ import SectionContainer from "../components/SectionContainer.astro";
   description="Contacta con Elias Baron, desarrollador web y programador full stack."
 >
   <main>
-    <SectionContainer>
+    <SectionContainer class="py-44 pb-24">
       <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
         Hola, soy Elias!
         <!-- <div class="flex justify-center items-center"><Badge>Disponible</Badge></div> -->
@@ -41,7 +42,11 @@ import SectionContainer from "../components/SectionContainer.astro";
       </nav>
     </SectionContainer>
 
-    <SectionContainer>
+    <SectionContainer id="experiencia">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-7" />
+        Experiencia Laboral
+      </h2>
       <Experience />
     </SectionContainer>
 
