@@ -1,11 +1,26 @@
 ---
 import KotlinIcon from "../icons/Kotlin.astro";
+import CSSIcon from "../icons/CSS.astro";
+import React from "../icons/React.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import WebIcon from "../icons/Web.astro";
+import LinkButton from "../components/LinkButton.astro";
 
 const TAGS = {
   JAVALIN: {
     name: "Javalin",
-    className: "bg-white text-fuchsia-600",
+    className: "bg-neutral-300	 text-fuchsia-600",
     icon: KotlinIcon,
+  },
+  CSS: {
+    name: "CSS",
+    className: "bg-sky-950	 text-white",
+    icon: CSSIcon,
+  },
+  REACT: {
+    name: "React",
+    className: "bg-sky-950	 text-white",
+    icon: React,
   },
 };
 
@@ -14,10 +29,9 @@ const PROJECTS = [
     title: "Steam Project",
     description:
       "A educational project which I made, simulating a Steam page. It has an API, web and mobile",
-    link: "https://github.com/EliasBaron/Steam-project",
     github: "https://github.com/EliasBaron/Steam-project",
     image: "/projects/st.webp",
-    tags: [TAGS.JAVALIN, TAGS.JAVALIN],
+    tags: [TAGS.CSS, TAGS.JAVALIN, TAGS.REACT],
     // "CSS", "JavaScript", "React", "React Native"
   },
   {
@@ -26,31 +40,50 @@ const PROJECTS = [
     link: "https://elias-battleship.netlify.app/",
     github: "https://github.com/EliasBaron/unq-ui-elias-baron-trabajo-final",
     image: "/projects/bs.webp",
-    tags: [],
+    tags: [TAGS.REACT, TAGS.CSS],
   },
 ];
 ---
 
-{
-  PROJECTS.map(({ image, title, description, tags }) => (
-    <article>
-      <h3 class="text-2xl font-semibold mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row">
-        {tags.map((tag) => (
-          <li>
-            <span class={`flex gap-x-2 rounded-full text-xs ${tag.className} py-1 px-2 mb-2`}>
-              <tag.icon class="size-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
-    </article>
-  ))
-}
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, github, link }) => (
+      <article>
+        <h3 class="text-2xl font-semibold mb-2 text-sky-600">{title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-2 flex-row">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.className} py-1 px-2 mb-2`}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          loading="lazy"
+          class="rounded shadow-2xl shadow-white/10 aspect-video"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${image}`}
+        />
+        <footer class="flex gap-x-4 items-end justify-start mt-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHubIcon />
+              Ver código fuente
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <WebIcon class="size-6" />
+              Ir al sitio web
+            </LinkButton>
+          )}
+        </footer>
+      </article>
+    ))
+  }
+</div>
