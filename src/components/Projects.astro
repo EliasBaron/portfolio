@@ -1,4 +1,14 @@
 ---
+import KotlinIcon from "../icons/Kotlin.astro";
+
+const TAGS = {
+  JAVALIN: {
+    name: "Javalin",
+    className: "bg-white text-fuchsia-600",
+    icon: KotlinIcon,
+  },
+};
+
 const PROJECTS = [
   {
     title: "Steam Project",
@@ -7,7 +17,8 @@ const PROJECTS = [
     link: "https://github.com/EliasBaron/Steam-project",
     github: "https://github.com/EliasBaron/Steam-project",
     image: "/projects/st.webp",
-    tags: ["Javalin", "CSS", "JavaScript", "React", "React Native"],
+    tags: [TAGS.JAVALIN, TAGS.JAVALIN],
+    // "CSS", "JavaScript", "React", "React Native"
   },
   {
     title: "Battleship",
@@ -15,7 +26,7 @@ const PROJECTS = [
     link: "https://elias-battleship.netlify.app/",
     github: "https://github.com/EliasBaron/unq-ui-elias-baron-trabajo-final",
     image: "/projects/bs.webp",
-    tags: ["CSS", "React"],
+    tags: [],
   },
 ];
 ---
@@ -25,15 +36,20 @@ const PROJECTS = [
     <article>
       <h3 class="text-2xl font-semibold mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul>
+      <ul class="flex gap-x-2 flex-row">
         {tags.map((tag) => (
-          <li>{tag}</li>
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.className} py-1 px-2 mb-2`}>
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
         ))}
       </ul>
       <img
         class="rounded shadow-2xl shadow-white/10"
         src={image}
-        alt={"Captura de pantalla del proyecto ${image}"}
+        alt={`Captura de pantalla del proyecto ${image}`}
       />
     </article>
   ))
