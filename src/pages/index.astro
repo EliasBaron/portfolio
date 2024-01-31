@@ -20,18 +20,18 @@ import AboutMe from "../components/AboutMe.astro";
   <main class="px-4">
     <SectionContainer class="py-44 pb-24">
       <h1
-        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 animate-fade-down animate-ease-linear"
       >
         Hola, soy Elias!
         <!-- <div class="flex justify-center items-center"><Badge>Disponible</Badge></div> -->
       </h1>
-      <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[500px]">
+      <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[500px] animate-fade animate-ease-linear">
         Estudiante universitario de Licenciatura en Informática en la UNQ.
         Interesado por el desarrollo. De <span class="text-sky-400"
           >Buenos Aires, Argentina</span
         >.
       </h2>
-      <nav class="flex gap-4 mt-8 flex-wrap">
+      <nav class="flex gap-4 mt-8 flex-wrap animate-fade animate-ease-linear">
         <SocialPill href="https://www.linkedin.com/in/elias-baron-390987270/">
           <LinkedInIcon />
           LinkedIn
@@ -47,8 +47,8 @@ import AboutMe from "../components/AboutMe.astro";
       </nav>
     </SectionContainer>
 
-    <SectionContainer id="experiencia">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+    <SectionContainer id="experiencia" class="animate-fade-right animate-ease-linear">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center ">
         <Briefcase class="size-7" />
         Experiencia Laboral
       </h2>
