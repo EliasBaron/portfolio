@@ -5,7 +5,5 @@ export default {
 	theme: {
 		extend: {},
 	},
-	plugins: [
-		require('tailwindcss-animated'),
-	],
+  plugins: [require('tailwindcss-animated')],
 }
